@@ -62,48 +62,6 @@ The **Bengali Caption Generator** is a full-stack web application designed to he
 - **Prompt Engineering**: Optimized prompts for Bengali cultural context
 - **Temperature Control**: Balanced creativity and relevance (0.7 temperature setting)
 
-### Database Schema
-```sql
--- Users table for authentication
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- History table for user-generated captions
-CREATE TABLE history (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    keywords TEXT NOT NULL,
-    captions JSON NOT NULL,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
--- Favorites table for saved captions
-CREATE TABLE favorites (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    caption TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
--- API keys management table
-CREATE TABLE api_keys (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    api_key VARCHAR(255) NOT NULL,
-    description VARCHAR(100),
-    is_active BOOLEAN DEFAULT TRUE,
-    usage_count INT DEFAULT 0,
-    last_error_count INT DEFAULT 0,
-    last_used TIMESTAMP NULL,
-    last_error_message TEXT
-);
-```
 
 ## 🎯 Use Cases
 
@@ -132,48 +90,6 @@ CREATE TABLE api_keys (
 - MySQL 5.7 or higher
 - Web server (Apache/Nginx)
 - OpenAI API key or OpenRouter API access
-
-### Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/bengali-caption-generator.git
-cd bengali-caption-generator
-```
-
-2. **Set up the database**
-```sql
-CREATE DATABASE bangla_caption_maker;
-USE bangla_caption_maker;
--- Run the SQL schema provided above
-```
-
-3. **Configure database connection**
-```php
-// Edit db_config.php
-$db_host = 'localhost';
-$db_name = 'bangla_caption_maker';
-$db_user = 'your_username';
-$db_password = 'your_password';
-```
-
-4. **Set up API keys**
-```php
-// Add your OpenAI/OpenRouter API key
-// In generate.php or set environment variable
-$api_key = 'your-openai-api-key';
-```
-
-5. **Deploy to web server**
-- Copy files to your web server directory
-- Ensure proper file permissions
-- Test the application
-
-### Environment Variables
-```bash
-# Optional: Set API key as environment variable
-export OPENROUTER_API_KEY="your-api-key-here"
-```
 
 ## 🔧 API Endpoints
 
@@ -326,25 +242,6 @@ EXPOSE 80
 - **Mobile Responsive**: 100% responsive design
 - **Load Time**: <2 seconds average page load
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our contributing guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Setup
-```bash
-# Install development dependencies
-npm install -g live-server  # For frontend development
-
-# Run local development server
-php -S localhost:8000
-```
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -359,9 +256,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact & Support
 
-- **Project Maintainer**: Ankan Das
-- **Email**: contact@ankandas.com
-- **LinkedIn**: [Ankan Das](https://linkedin.com/in/ankandas)
+- **Project Author**: Ankan Das
+
 - **Facebook**: [Ankan Das](https://fb.com/ankandas.fb)
 
 ---
