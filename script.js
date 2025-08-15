@@ -317,10 +317,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 return favText !== captionText;
             });
             button.textContent = '☆';
+            button.classList.remove('favorite-active');
         } else {
             // Add to favorites
             favoriteCaptions.push(caption);
             button.textContent = '★';
+            button.classList.add('favorite-active');
         }
         
         if (useDatabase) {

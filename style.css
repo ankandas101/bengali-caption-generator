@@ -597,10 +597,17 @@ input[type="text"]:hover {
 }
 
 .favorite-btn.favorite-active {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
+    background: linear-gradient(135deg, #ff4757, #ff3838);
     color: white;
-    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
     animation: heartBeat 0.6s ease;
+}
+
+/* History section specific favorite button styling */
+.history-captions .favorite-btn.favorite-active {
+    background: linear-gradient(135deg, #e45c1d, #dce73b);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
 }
 
 @keyframes heartBeat {
