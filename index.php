@@ -15,7 +15,8 @@ if ($isLoggedIn) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bengali Caption Generator</title>
+    <title>Bengali Caption Generator - AI-Powered Bengali Captions for Social Media</title>
+    <meta name="description" content="Generate beautiful, engaging Bengali captions for your social media posts with our AI-powered tool. Perfect for Facebook, Instagram, and more. Free to use! Made By Ankan Das">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -88,7 +89,7 @@ if ($isLoggedIn) {
         </div>
         <?php endif; ?>
         
-        <div class="version">| <a href="https://fb.com/ankandas.fb" target="_blank"> &copy; Ankan Das </a> |</div>
+        <div class="version">| <a href="https://fb.com/ankandas.fb" target="_blank"> Made by Ankan Das </a> |</div>
     </div>
     
     <script>
