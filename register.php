@@ -38,8 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $error = 'Registration failed: ' . $result['error'];
             }
-        } else {
-            $success = 'Registration successful! You can now login.';
+        } else{
+            header('Location: login.php');
+            exit;
         }
     }
 }
