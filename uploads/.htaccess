@@ -1,0 +1,38 @@
+# Uploads Directory Security
+
+# Deny all access to PHP files in uploads
+<Files "*.php">
+    Require all denied
+</Files>
+
+# Deny access to executable files
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    Require all denied
+</FilesMatch>
+
+# Deny access to potentially dangerous files
+<FilesMatch "\.(shtml|shtm|stm)$">
+    Require all denied
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
+
+# Set proper content type for uploaded files
+<IfModule mod_mime.c>
+    AddType text/plain .txt
+    AddType image/jpeg .jpg .jpeg
+    AddType image/png .png
+    AddType image/gif .gif
+    AddType application/pdf .pdf
+</IfModule>
+
+# Remove PHP handler for this directory
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+# Prevent execution of any scripts
+<IfModule mod_cgi.c>
+    Options -ExecCGI
+</IfModule>

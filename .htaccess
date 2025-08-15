@@ -1,0 +1,41 @@
+# Bengali Caption Generator - Minimal Security .htaccess
+
+# Basic security settings
+ServerSignature Off
+Options -Indexes
+
+# Protect sensitive files
+<Files "db_config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "auth.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "admin_auth.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.sql">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.log">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files ".env">
+    Order allow,deny
+    Deny from all
+</Files>
